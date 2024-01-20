@@ -1,4 +1,4 @@
-FROM alpine as build
+FROM alpine:3.19 as build
 
 FROM scratch
 
