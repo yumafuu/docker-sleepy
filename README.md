@@ -5,16 +5,26 @@ Just Sleep...zzz
 [Docker Hub](https://hub.docker.com/repository/docker/yumafuu/sleepy/general)
 
 
-```Dockerfile
-FROM alpine:3.19 as build
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-FROM scratch
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <seconds>\n", argv[0]);
+        return 1;
+    }
 
-COPY --from=build /lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
-COPY --from=build /bin/busybox /bin/busybox
+    int seconds = atoi(argv[1]);
 
-ENTRYPOINT ["/bin/busybox", "sleep"]
+    printf("Sleeping for %d seconds...\n", seconds);
+    sleep(seconds);
+
+    printf("Wake up!\n");
+    return 0;
+}
 ```
 
 ## Info
-Size: 904.93 KB
+Size: 415.21 KB
