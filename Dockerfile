@@ -1,8 +1,11 @@
-FROM alpine:3.19 as build
+FROM gcc:13.2 AS build
+
+COPY sleep.c .
+
+RUN gcc -o sleep sleep.c -static
 
 FROM scratch
 
-COPY --from=build /lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
-COPY --from=build /bin/busybox /bin/busybox
+COPY --from=build /sleep /bin/sleep
 
-ENTRYPOINT ["/bin/busybox", "sleep"]
+ENTRYPOINT ["/bin/sleep"]
