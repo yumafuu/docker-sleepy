@@ -1,6 +1,8 @@
-FROM gcc:13.2 AS build
+FROM alpine:3.12 as build
 
 COPY sleep.c .
+
+RUN apk add --no-cache build-base
 
 RUN gcc -o sleep sleep.c -static
 
