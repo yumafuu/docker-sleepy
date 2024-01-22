@@ -1,4 +1,4 @@
-FROM alpine:3.12 as build
+FROM alpine:3.19 as build
 
 COPY sleep.c .
 
