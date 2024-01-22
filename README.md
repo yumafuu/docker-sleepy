@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 $ docker push yumafuu/sleepy:latest 10
 ```
 
-## Warn
+## Warning
 If a non-numeric string is passed, it will sleep for 0 seconds and exit with a status of 0.
 
 
