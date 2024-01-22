@@ -28,7 +28,7 @@ $ docker push yumafuu/sleepy:latest 10
 ```
 
 ## Warning
-If a non-numeric string is passed, it will sleep for 0 seconds and exit with a status of 0.
+If a non-numeric string is passed, it will sleep for 0 seconds and exit with status code 0.
 
 
 ## Info
