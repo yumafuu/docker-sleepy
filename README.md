@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 
 ```bash
 # sleep 10 seconds
-$ docker push yumafuu/sleepy:latest 10
+$ docker run yumafuu/sleepy:latest 10
 ```
 
 ## Warning
